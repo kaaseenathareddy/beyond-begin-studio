@@ -11,14 +11,6 @@ const About = () => {
     { icon: Award, title: "Excellence", description: "Delivering nothing less than the best quality" },
   ];
 
-  const achievements = [
-    { year: "2020", milestone: "Founded FINITIX with a vision to democratize technology" },
-    { year: "2021", milestone: "Delivered 50+ projects across 10 countries" },
-    { year: "2022", milestone: "Expanded team to 50+ professionals globally" },
-    { year: "2023", milestone: "Recognized as 'Top 10 Emerging Tech Companies'" },
-    { year: "2024", milestone: "Crossed 200+ satisfied clients and launched Innovation Hub" },
-  ];
-
   return (
     <div className="min-h-screen pt-24 pb-12">
       <div className="container mx-auto px-4">
@@ -145,30 +137,81 @@ const About = () => {
           </div>
         </section>
 
-        {/* Journey Timeline */}
+        {/* Future Goals 2050 */}
         <section className="mb-20">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12 text-center">
-            Our <span className="text-gradient">Journey</span>
+            Our Future <span className="text-gradient">Vision 2050</span>
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {achievements.map((achievement, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-card border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow animate-scale-in group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="text-3xl font-heading font-bold text-gradient">{achievement.year}</div>
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-10 bg-gradient-glow border-primary/20 mb-8">
+              <p className="text-xl text-foreground/80 leading-relaxed text-center mb-8">
+                By 2050, FINITIX aims to be a global leader in technology innovation, empowering billions 
+                of people worldwide with accessible, intelligent, and sustainable digital solutions.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">🌍</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">Global Impact</h4>
+                      <p className="text-foreground/80">
+                        Serve 1 billion+ users across 100+ countries with transformative technology solutions
+                      </p>
+                    </div>
                   </div>
-                  <div className="border-l-2 border-primary/30 pl-6">
-                    <p className="text-foreground/80 group-hover:text-foreground transition-smooth">
-                      {achievement.milestone}
-                    </p>
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">🤖</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">AI Leadership</h4>
+                      <p className="text-foreground/80">
+                        Pioneer next-generation AI systems that augment human capabilities and solve complex challenges
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">🌱</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">Sustainable Tech</h4>
+                      <p className="text-foreground/80">
+                        Build carbon-neutral infrastructure and promote eco-friendly technology practices
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </Card>
-            ))}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">🎓</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">Education Revolution</h4>
+                      <p className="text-foreground/80">
+                        Democratize quality education through intelligent learning platforms accessible to all
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">💡</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">Innovation Ecosystem</h4>
+                      <p className="text-foreground/80">
+                        Create a thriving network of 10,000+ innovation hubs worldwide fostering entrepreneurship
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-primary text-2xl">🏥</div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2">Healthcare Access</h4>
+                      <p className="text-foreground/80">
+                        Transform healthcare delivery with AI-powered diagnostics and telemedicine for underserved communities
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+            <blockquote className="text-2xl md:text-3xl font-heading font-bold text-center text-gradient italic">
+              "Building tomorrow's technology, today—for a better world in 2050."
+            </blockquote>
           </div>
         </section>
 

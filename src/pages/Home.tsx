@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Zap, Shield, Globe, MessageCircle, Lightbulb, Gem, CheckCircle, Users, TrendingUp, Award } from "lucide-react";
-import logo from "@/assets/finitix-logo.png";
+import { Zap, Shield, Globe, MessageCircle, Lightbulb, Gem, CheckCircle } from "lucide-react";
 import heroInnovation from "@/assets/hero-innovation.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import dataAnalytics from "@/assets/data-analytics.jpg";
@@ -15,13 +14,6 @@ const Home = () => {
     { icon: MessageCircle, title: "Community Driven", description: "Building ecosystems where everyone grows" },
     { icon: Lightbulb, title: "Innovation First", description: "Turning ideas into impact" },
     { icon: Gem, title: "Premium Quality", description: "Affordable excellence" },
-  ];
-
-  const stats = [
-    { number: "500+", label: "Projects Delivered", icon: CheckCircle },
-    { number: "200+", label: "Happy Clients", icon: Users },
-    { number: "98%", label: "Success Rate", icon: TrendingUp },
-    { number: "15+", label: "Industry Awards", icon: Award },
   ];
 
   const processSteps = [
@@ -40,18 +32,9 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="animate-fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <img src={logo} alt="FINITIX Logo" className="h-16 w-auto" />
-                <div>
-                  <h1 className="text-3xl font-heading font-bold text-gradient">FINITIX</h1>
-                  <p className="text-sm text-muted-foreground">Beyond Begin</p>
-                </div>
-              </div>
-              
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
-                Transforming Ideas Into
-                <span className="text-gradient"> Digital Reality</span>
-              </h2>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-tight">
+                <span className="text-gradient">FINITIX</span>
+              </h1>
               
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
                 We are a product-based software company dedicated to building innovative technology 
@@ -109,23 +92,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-16 bg-card border-y border-border/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <Icon className="mx-auto mb-4 text-primary" size={40} />
-                  <div className="text-4xl font-heading font-bold text-gradient mb-2">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Who We Are */}
       <section className="py-20">

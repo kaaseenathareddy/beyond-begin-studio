@@ -53,27 +53,6 @@ const InnovationHub = () => {
     },
   ];
 
-  const successStories = [
-    {
-      company: "HealthSync",
-      industry: "HealthTech",
-      impact: "Revolutionized patient care with AI-powered diagnostics",
-      result: "500K+ users, $5M Series A funding",
-    },
-    {
-      company: "EduLearn",
-      industry: "EdTech",
-      impact: "Created an adaptive learning platform for personalized education",
-      result: "200+ schools, 50K+ students impacted",
-    },
-    {
-      company: "FinFlow",
-      industry: "FinTech",
-      impact: "Built a seamless payment solution for small businesses",
-      result: "10K+ merchants, $10M transaction volume",
-    },
-  ];
-
   const ecosystemBenefits = [
     {
       icon: Target,
@@ -178,35 +157,6 @@ const InnovationHub = () => {
           </div>
         </section>
 
-        {/* Success Stories */}
-        <section className="mb-20 bg-card rounded-2xl p-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-center">
-            <span className="text-gradient">Success Stories</span>
-          </h2>
-          <p className="text-center text-foreground/80 mb-12 max-w-2xl mx-auto">
-            Real companies, real impact. See how our Innovation Hub partners are changing their industries.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-background border-border/50 hover:border-primary/50 transition-smooth hover:shadow-glow animate-scale-in group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="mb-4">
-                  <h3 className="text-xl font-heading font-semibold mb-1 group-hover:text-primary transition-smooth">
-                    {story.company}
-                  </h3>
-                  <p className="text-sm text-primary">{story.industry}</p>
-                </div>
-                <p className="text-foreground/80 mb-4">{story.impact}</p>
-                <div className="pt-4 border-t border-border/50">
-                  <p className="text-sm font-semibold text-gradient">{story.result}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* Ecosystem Benefits */}
         <section className="mb-20">
