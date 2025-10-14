@@ -32,9 +32,14 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="animate-fade-in">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 leading-tight">
                 <span className="text-gradient">FINITIX</span>
               </h1>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-8 leading-tight">
+                Transforming Ideas Into
+                <span className="text-gradient"> Digital Reality</span>
+              </h2>
               
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
                 We are a product-based software company dedicated to building innovative technology 
