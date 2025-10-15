@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, Globe, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 import officeSpace from "@/assets/office-space.jpg";
 
 const Contact = () => {
@@ -16,7 +17,9 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -32,9 +35,20 @@ const Contact = () => {
       return;
     }
 
-    // In a real application, you would send this to a backend
-    toast.success("Message sent successfully! We'll get back to you within 24 hours.");
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert([formData]);
+
+      if (error) throw error;
+
+      toast.success("Message sent successfully! We'll get back to you within 24 hours.");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting message:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -182,8 +196,9 @@ const Contact = () => {
                 type="submit"
                 size="lg"
                 className="w-full glow-effect bg-gradient-primary hover:shadow-glow-purple"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>

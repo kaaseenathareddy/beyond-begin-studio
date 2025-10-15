@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -5,8 +6,15 @@ import { Zap, Shield, Globe, MessageCircle, Lightbulb, Gem, CheckCircle } from "
 import heroInnovation from "@/assets/hero-innovation.jpg";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 import dataAnalytics from "@/assets/data-analytics.jpg";
+import { ProjectSubmissionForm } from "@/components/ProjectSubmissionForm";
+import { ConsultationRequestForm } from "@/components/ConsultationRequestForm";
+import { InnovationHubApplicationForm } from "@/components/InnovationHubApplicationForm";
 
 const Home = () => {
+  const [projectFormOpen, setProjectFormOpen] = useState(false);
+  const [consultationFormOpen, setConsultationFormOpen] = useState(false);
+  const [innovationFormOpen, setInnovationFormOpen] = useState(false);
+
   const strengths = [
     { icon: Zap, title: "Lightning Fast", description: "Rapid development and scalable deployment" },
     { icon: Shield, title: "Secure & Reliable", description: "Enterprise-grade security, 99.9% uptime" },
@@ -50,11 +58,11 @@ const Home = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button
-                  asChild
                   size="lg"
                   className="glow-effect bg-gradient-primary hover:shadow-glow-purple text-lg px-8 py-6"
+                  onClick={() => setProjectFormOpen(true)}
                 >
-                  <Link to="/contact">Start Your Project</Link>
+                  Start Your Project
                 </Button>
                 <Button
                   asChild
@@ -259,6 +267,39 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Innovation Hub Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in mb-12">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
+              Join Our <span className="text-gradient">Innovation Hub</span>
+            </h2>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-8">
+              The Innovation Hub is where visionaries, startups, and enterprises come together to collaborate, 
+              innovate, and bring groundbreaking ideas to life. Whether you're looking for mentorship, technical 
+              expertise, investment opportunities, or strategic partnerships, we're here to help you succeed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="glow-effect bg-gradient-primary hover:shadow-glow-purple text-lg px-8 py-6"
+                onClick={() => setInnovationFormOpen(true)}
+              >
+                Join Innovation Hub
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary/50 hover:bg-primary/10 text-lg px-8 py-6"
+              >
+                <Link to="/innovation-hub">Explore Innovation Hub</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -283,11 +324,11 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  asChild
                   size="lg"
                   className="glow-effect bg-gradient-primary hover:shadow-glow-purple text-lg px-8 py-6"
+                  onClick={() => setConsultationFormOpen(true)}
                 >
-                  <Link to="/contact">Schedule a Consultation</Link>
+                  Schedule a Consultation
                 </Button>
                 <Button
                   asChild
@@ -302,6 +343,11 @@ const Home = () => {
           </Card>
         </div>
       </section>
+
+      {/* Forms */}
+      <ProjectSubmissionForm open={projectFormOpen} onOpenChange={setProjectFormOpen} />
+      <ConsultationRequestForm open={consultationFormOpen} onOpenChange={setConsultationFormOpen} />
+      <InnovationHubApplicationForm open={innovationFormOpen} onOpenChange={setInnovationFormOpen} />
     </div>
   );
 };
