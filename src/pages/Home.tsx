@@ -219,53 +219,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technology Excellence */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
-                Powered by <span className="text-gradient">Cutting-Edge Technology</span>
-              </h2>
-              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                We leverage the latest technologies and frameworks to build solutions that are not only 
-                innovative but also scalable, secure, and maintainable. Our tech stack is carefully selected 
-                to match your project requirements and ensure long-term success.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-heading font-semibold mb-1">Modern Architecture</h4>
-                    <p className="text-sm text-muted-foreground">Microservices, cloud-native, and serverless designs</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-heading font-semibold mb-1">AI & Machine Learning</h4>
-                    <p className="text-sm text-muted-foreground">Intelligent automation and predictive analytics</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <h4 className="font-heading font-semibold mb-1">DevOps Excellence</h4>
-                    <p className="text-sm text-muted-foreground">CI/CD pipelines and automated testing</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="animate-scale-in" style={{ animationDelay: "0.2s" }}>
-              <img
-                src={dataAnalytics}
-                alt="Data Analytics and Technology"
-                className="rounded-2xl shadow-glow-purple w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Innovation Hub Section */}
       <section className="py-20 bg-card">
@@ -328,7 +281,7 @@ const Home = () => {
                   className="glow-effect bg-gradient-primary hover:shadow-glow-purple text-lg px-8 py-6"
                   onClick={() => setConsultationFormOpen(true)}
                 >
-                  Schedule a Consultation
+                  Schedule a Free Consultation
                 </Button>
                 <Button
                   asChild

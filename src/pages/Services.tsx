@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Code, Palette, Brain, Smartphone, Cloud, TrendingUp, CheckCircle } from "lucide-react";
 import servicesWorkspace from "@/assets/services-workspace.jpg";
 import dataAnalytics from "@/assets/data-analytics.jpg";
+import { ConsultationRequestForm } from "@/components/ConsultationRequestForm";
 
 const Services = () => {
+  const [consultationFormOpen, setConsultationFormOpen] = useState(false);
   const services = [
     {
       icon: Code,
@@ -277,14 +280,16 @@ const Services = () => {
             Let's discuss your project requirements and explore how our services can help you achieve your goals.
           </p>
           <Button
-            asChild
             size="lg"
             className="glow-effect bg-gradient-primary hover:shadow-glow-purple text-lg px-8 py-6"
+            onClick={() => setConsultationFormOpen(true)}
           >
-            <Link to="/contact">Schedule a Free Consultation</Link>
+            Schedule a Free Consultation
           </Button>
         </div>
       </div>
+
+      <ConsultationRequestForm open={consultationFormOpen} onOpenChange={setConsultationFormOpen} />
     </div>
   );
 };
